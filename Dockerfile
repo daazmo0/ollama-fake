@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 RUN go build -o main .
 
-FROM alpine:latest
+FROM debian:12-slim
 WORKDIR /app
 COPY --from=builder /app/main /app/
 EXPOSE 11434
